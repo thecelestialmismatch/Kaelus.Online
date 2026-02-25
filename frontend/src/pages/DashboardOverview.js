@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Robot, ChatCircle, ShieldCheck, Lightning, ArrowUp, TrendEmpty } from '@phosphor-icons/react';
+import { Robot, ChatCircle, ShieldCheck, Lightning, ArrowUp, ChartLineDown } from '@phosphor-icons/react';
 import { useNavigate } from 'react-router-dom';
 import { analyticsAPI } from '../lib/api';
 import { useAuth } from '../context/AuthContext';
