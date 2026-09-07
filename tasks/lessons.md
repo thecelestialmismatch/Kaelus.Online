@@ -2184,3 +2184,24 @@ modified list.
 a file you have real uncommitted changes in. And print `git status` after any destructive
 cleanup: the failure mode here is silent, and the tests still passed afterwards because
 the reverted file was a *valid older implementation*.
+
+### A named-file allowlist only guards the files someone remembered to name
+**What:** `partner-offer-coherence.test.ts` was written specifically to stop stale partner
+economics from resurfacing, and it passed for weeks while `docs/gtm/rpo-outreach-list.md`
+— a doc headed "ready to send" — offered **$299 wholesale, a 40% referral and 20%
+recurring**, three retired figures that contradicted each other, the canon ($399 flat
+$100 off, a discount with no payout), and the live `/partners` pages. Its `PARTNER_SURFACES`
+list was six `.tsx`/`.ts` files by name. The app was right; the thing a human actually
+pastes into an email to Summit 7 was $100 under wholesale and promised a commission that
+does not exist. Same defect class in `docs/SEO-PLAN-2026.md`, which specified the
+`/partners` title as "20% Recurring Commission for **C3PAOs**" — a payout that does not
+exist, offered to a channel the NEVER DO list bars on legal grounds.
+**Rule:** GTM copy a human sends is a partner surface — scan it like one. When a guard
+uses an explicit allowlist, the drift lands in whatever was left off it, so either walk the
+tree (as the 40–50% scan already did) or add every surface that quotes the number to a
+buyer. Two secondary notes: the fixed docs need to be able to *state* the retired figure in
+a dated correction note or the next reader reintroduces it — hence blockquotes are stripped
+before scanning, matching the existing ARCHIVES carve-out; and a payout predicate must be
+written knowing correct copy will say the word ("a discount, not a commission" tripped it),
+so the copy says "not a payout" and the predicate stays blunt rather than trying to parse
+negation.

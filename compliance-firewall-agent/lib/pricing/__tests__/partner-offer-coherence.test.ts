@@ -45,7 +45,19 @@ import {
 const APP_ROOT = path.resolve(__dirname, '../../..');
 const REPO_ROOT = path.resolve(APP_ROOT, '..');
 
-/** Every surface that quotes partner economics to a human. */
+/**
+ * Every surface that quotes partner economics to a human.
+ *
+ * WHY THE MARKDOWN ENTRIES ARE HERE (added 2026-09-07). This list was six app
+ * files, and on that basis the suite passed while
+ * `docs/gtm/rpo-outreach-list.md` — a doc headed "ready to send" — carried
+ * "$299 wholesale", "40% referral" and "20% recurring" in a copy-paste-ready
+ * message frame. The pages were right; the thing a human actually pastes into
+ * an email to Summit 7 was $100 under wholesale and promised a commission that
+ * does not exist. A named-file allowlist only guards the files someone
+ * remembered to name, which is the same failure mode the 40–50% scan below was
+ * written to escape. GTM copy a human sends is a partner surface.
+ */
 const PARTNER_SURFACES = [
   'app/partners/page.tsx',
   'app/partners/kit/page.tsx',
@@ -53,7 +65,27 @@ const PARTNER_SURFACES = [
   'app/partners/apply/PartnerApplyForm.tsx',
   'lib/email/outreach.ts',
   'lib/email/templates/contact-received.ts',
+  'docs/gtm/rpo-outreach-list.md',
+  'docs/gtm/rpo-msp-outreach-sequence.md',
 ];
+
+/**
+ * The copy a partner would actually read, with dated correction notes removed.
+ *
+ * A doc that fixes a bad number has to be able to SAY what the bad number was,
+ * or the next reader reintroduces it. Those notes live in markdown blockquotes
+ * ('> ') and are records, not offers — the same carve-out the ARCHIVES list
+ * makes for dated audits. Everything outside a blockquote is live copy and is
+ * scanned in full.
+ */
+function readSellableCopy(full: string): string {
+  const src = fs.readFileSync(full, 'utf8');
+  if (!full.endsWith('.md')) return src;
+  return src
+    .split('\n')
+    .filter((line) => !/^\s*>/.test(line))
+    .join('\n');
+}
 
 describe('partner offer — one revenue share, one wholesale price', () => {
   it('prices retail at $499 and partners at $399', () => {
@@ -153,10 +185,14 @@ describe('partner offer — one revenue share, one wholesale price', () => {
     for (const rel of PARTNER_SURFACES) {
       const full = path.join(APP_ROOT, rel);
       if (!fs.existsSync(full)) continue;
-      const src = fs.readFileSync(full, 'utf8');
+      const src = readSellableCopy(full);
       if (STALE.test(src)) wrongPrices.push(rel);
     }
     expect(wrongPrices).toEqual([]);
+
+    // Teeth intact: the exact line that shipped in rpo-outreach-list.md until
+    // 2026-09-07 still trips both predicates.
+    expect(STALE.test('You co-brand it at $299 and charge $499-$999')).toBe(true);
   });
 
   it('never frames the offer as a payout on a partner surface', () => {
@@ -168,14 +204,20 @@ describe('partner offer — one revenue share, one wholesale price', () => {
     // contradiction was a percentage, not a dollar figure. A percentage also
     // forces a rounding call ($499 x 0.80 = $399.20), which is how the numbers
     // drifted apart in the first place — hence dollars only, in copy.
-    const PAYOUT = /(revenue\s*share|rev[- ]?share|commission|\d+\s*%\s*(of|share|cut|back))/i;
+    const PAYOUT =
+      /(revenue\s*share|rev[- ]?share|commission|referral\s+(share|fee)|refer\w*\s+(for\s+)?\d+\s*%|\d+\s*%\s*(of|share|cut|back|referral|recurring))/i;
     const offenders: string[] = [];
     for (const rel of PARTNER_SURFACES) {
       const full = path.join(APP_ROOT, rel);
       if (!fs.existsSync(full)) continue;
-      if (PAYOUT.test(fs.readFileSync(full, 'utf8'))) offenders.push(rel);
+      if (PAYOUT.test(readSellableCopy(full))) offenders.push(rel);
     }
     expect(offenders).toEqual([]);
+
+    // Teeth intact for the two forms that actually shipped in the GTM docs.
+    expect(PAYOUT.test('or refer for 40%')).toBe(true);
+    expect(PAYOUT.test('a recurring referral share on monitoring')).toBe(true);
+    expect(PAYOUT.test('plus 20% recurring on any monitoring subscription')).toBe(true);
 
     // Teeth intact: the predicate still catches the exact string that shipped.
     expect(PAYOUT.test('Up to 20% revenue share on subscriptions')).toBe(true);

@@ -4,11 +4,26 @@
 > A C3PAO is legally barred from recommending a product to a client it assesses
 > (32 CFR Part 170 · CMMC CoPC · ISO 17020 cooling-off). Pitch RPOs/MSPs instead.
 >
-> **Offer:** Co-brand the **$499 CMMC AI Risk Assessment Report** at **$299 wholesale**
-> (partner charges client $499–$999, keeps the margin), or **40% referral** per report
-> plus **20% recurring** on any monitoring subscription that follows.
+> **Offer (canonical — `lib/pricing/plans.ts`):** Co-brand the **$499 CMMC AI Risk
+> Assessment Report** at **$399 wholesale — a flat $100 partner discount**. The
+> partner pays us $399, bills their client $499–$999, and keeps the spread
+> (20% at $499, 60% at $999).
 >
-> **Stage 1 target:** ≥1 signed RPO/MSP referral agreement by June 25.
+> It is a **discount, not a payout** — no money ever leaves, so there is no
+> referral fee, commission or revenue share to quote or track. State it in
+> **dollars, never a percentage**: $499 × 0.80 = $399.20 forces a rounding call,
+> and every rounding is a new number to drift.
+>
+> ⚠️ **Corrected 2026-09-07.** This file previously offered **$299 wholesale, a
+> 40% referral and 20% recurring** — three retired figures that contradicted each
+> other and the canon. Anyone who had copied the message frame below into a real
+> partner email would have quoted $100 under wholesale and promised a commission
+> that does not exist. `lib/pricing/__tests__/partner-offer-coherence.test.ts`
+> was written to prevent exactly this and could not see it: it scanned six app
+> files by name, and this doc was not one of them. It scans the GTM docs now.
+>
+> **Stage 1 target:** ≥1 signed RPO/MSP referral agreement. The 2026-06-25 date
+> lapsed unmet and is awaiting founder re-baseline — see `CLAUDE.md`.
 
 ## Top targets (named in the brain — start here)
 
@@ -35,7 +50,7 @@
 > [Name] — your CMMC clients are pasting CUI into ChatGPT and have no audit trail for it.
 > We produce a SHA-256-signed AI-prompt risk report mapped to NIST 800-171 in 14 days,
 > running in the client's own environment (nothing leaves their network). You co-brand it
-> at $299 and charge $499–$999, or refer for 40%. It slots into your readiness packages.
+> at $399 and charge $499–$999, keeping the spread. It slots into your readiness packages.
 > Worth 15 minutes?
 
 ## Objection handling
