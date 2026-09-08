@@ -161,7 +161,7 @@ No pitch in the request; let the email thread carry it.
 |---|---|
 | "My clients already have a DLP." | "Traditional DLP doesn't inspect AI prompt traffic, and the AI-specific tools are cloud-based — which re-introduces the exposure. We close that gap locally, on their infra." |
 | "Is the data really staying local?" | "In Mode B — Docker on the client's own infrastructure — yes, prompts never leave their boundary. The hosted trial is for non-sensitive evaluation only; I'll never tell you otherwise." |
-| "What do I make on this?" | "Margin on the $499 report and a recurring referral share on monitoring. I'll put exact terms in front of you on a 15-minute call." |
+| "What do I make on this?" | "You buy at $399 — a flat $100 off the published $499 — and set your own retail. At $499 that is 20%; at $999 it is 60%. It is a discount, not a payout: no money moves back to you, so there is nothing to invoice or chase." |
 | "Is this just regex?" | "16 detection engines plus a behavioral layer, mapped to all 110 NIST 800-171 controls, sub-10ms. Happy to show the coverage map and a sample report." |
 | "Send info, I'll look later." | "Done — sample report + partner overview below. Mind if I check back in two weeks?" (keep the cadence) |
 
