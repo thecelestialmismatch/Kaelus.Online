@@ -8,6 +8,131 @@ otherwise costs the only month that matters. See 01-VERDICT.md, finding six.
 Nothing in this document requires money to start. Every channel listed is free
 to enter.
 
+## 0. The seven day sequence, and a correction
+
+Added 2026-09-08 after the runway was stated as under seven days. This section
+overrides the channel priority in section 3 for the first week.
+
+### The correction
+
+Section 3 puts Upwork first. For a 30 day horizon that is right. For a seven
+day horizon it is wrong, and the reason is mechanical rather than a matter of
+effort.
+
+An Upwork fixed price contract gives the client 14 days to review submitted
+work. Only after approval or auto release does the money move, and it then sits
+in a five day security hold before it can be withdrawn. Worst case from
+submitted work to withdrawable cash is 19 days. Even a client who approves
+within the hour leaves the five day hold and the withdrawal transfer in the
+way.
+
+Upwork cannot pay rent this week. It is a week two channel. Keep applying,
+because those applications become the month, but do not count on the money.
+
+### What can pay this week
+
+One mechanism, and it is already built. A deposit, paid directly, before the
+work starts.
+
+There is a live Stripe account behind HoundShield. A Stripe payment link takes
+about four minutes to create and money lands in the account on Stripe's normal
+payout schedule rather than after anyone's review period. That is the entire
+difference between this week and week three.
+
+So every offer this week is structured the same way. Fifty percent up front to
+start, fifty percent on delivery. This is standard practice for contract work,
+it is not an unusual ask, and clients who refuse a deposit are usually the ones
+who were going to be difficult about the final invoice anyway.
+
+Concretely, a 1,800 dollar Stripe Rescue means 900 dollars this week. Three of
+those is 2,700 dollars this week and 2,700 more on delivery. That reaches the
+number without needing anyone to pay in full up front.
+
+### The order for the next seven days
+
+Day one, the whole day. Warm network. Every former colleague, manager,
+classmate, and acquaintance who works anywhere with a website. Use the message
+in section 4c with the deposit paragraph in 0.1 below appended. This channel
+has by far the highest close rate and the shortest path to money because there
+is no platform, no escrow, and no review period between the yes and the
+payment. It is also the one that feels worst to send, which is the only reason
+it has not been sent already.
+
+Day two. Reply to every response from day one. Anyone warm gets a scoped fixed
+price and a Stripe link the same day. Do not write a proposal document. A
+price, a date, a link.
+
+Days two to seven, each morning. Twenty Upwork applications, because week two
+depends on them. Then six direct observation emails per day using 4b with the
+deposit paragraph.
+
+Every day. Answer every reply within the hour during waking hours. Speed is the
+only competitive advantage available with no reviews and no reputation.
+
+### 0.05 The warm list has to come from you, and only this part does
+
+Checked 2026-09-08 by reading the connected Gmail account directly, so that the
+day one plan rests on a fact rather than an assumption.
+
+The sent folder holds 201 threads and almost all of them are automated
+unsubscribe messages, most sent in a single batch on 2026-08-11. The only real
+human correspondence is a support ticket. There is no warm business network in
+this email account.
+
+This does not mean there is no warm network. It means the warm network is not
+in Gmail. It is in the phone contacts, in LinkedIn connections, in WhatsApp,
+and in whatever messaging app carries actual conversations.
+
+So this one step cannot be automated and cannot be delegated. Twenty minutes,
+by hand, once:
+
+1. Open the phone contacts. Write down every name who works anywhere with a
+   website. Not just people liked, not just people spoken to recently. Every
+   name.
+2. Open LinkedIn connections. Same rule. Anyone at a company with more than
+   three employees.
+3. Old work email, old university group chats, former managers, former
+   teammates, the person who ran a team once.
+4. Target 40 names. Fewer than 20 is not a list, it is a shortlist, and a
+   shortlist has already been filtered by the fear of asking.
+
+Then everything downstream is automated again: the messages are written, the
+drafts are created, the follow ups are tracked.
+
+The reason this step gets its own section is that it is the step most likely to
+be skipped, and it sits in front of the highest converting channel in the whole
+plan. Skipping it does not save twenty minutes. It removes the fastest route to
+the money.
+
+### 0.1 The deposit paragraph
+
+Append this to any message once the conversation turns concrete. It is the
+sentence that converts an interested reply into money this week.
+
+> The way I work is fixed price, half up front to start and half on delivery. I
+> will send a payment link for the first half and start the same day it clears.
+> If it is not fixed by the date I gave you, I refund the deposit in full.
+
+The refund clause is what makes the up front half easy to agree to. It costs
+nothing in expectation because the work is deliverable, and it removes the only
+real objection a stranger has to paying a stranger first.
+
+### 0.2 If nothing has closed by day five
+
+Two moves, in this order, and no others.
+
+1. Drop to a 300 to 500 dollar scoped job, paid 100 percent up front, deliverable
+   in one day. At that price a deposit is not a negotiation, it is just the
+   price. One delivered job produces a testimonial and a referral, and both are
+   worth more than the margin given up.
+2. Offer the AI Risk Snapshot at 750 dollars to two or three people in the warm
+   network who run or work at a company using ChatGPT. It requires no access to
+   their systems, takes under a day, and is the fastest thing on this list to
+   deliver.
+
+Do not lower prices below this floor and do not offer to work for free to build
+a portfolio. Three live deployed applications already are the portfolio.
+
 ## 1. The arithmetic
 
 Target 7,000 dollars. Three shapes reach it and all three are realistic.

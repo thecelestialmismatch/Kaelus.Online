@@ -8,6 +8,9 @@ Last updated 2026-09-08 by the session that created this folder.
 ## Dates
 
 Today 2026-09-08.
+RUNWAY: under seven days. Stated by the founder 2026-09-08. This overrides the
+channel order in 03-CASH-30-DAYS.md section 3 for the first week; section 0
+governs instead.
 Cash checkpoint 2026-10-08. Days remaining 30.
 Asset decision 2026-11-08. Days remaining 61.
 CMMC Task Force report expected public on or about 2026-09-28. Days remaining 20.
@@ -30,8 +33,11 @@ Asset lane calls booked: 0.
 
 ## Current cycle position
 
-Cash lane: not started. First action is the warm network send in
-03-CASH-30-DAYS.md section 4c, before day 5.
+Cash lane: not started. Under a seven day runway, section 0 governs. Upwork is
+structurally too slow to pay this week (14 day client review plus a five day
+security hold, worst case 19 days to withdrawable), so every offer this week is
+fifty percent up front via a Stripe payment link. First action is building the
+warm list by hand, section 0.05.
 Asset lane: not started. First action is the pricing page copy replacement in
 04-ASSET-90-DAYS.md section 1.
 
@@ -41,6 +47,16 @@ HoundShield: active, sales only, no feature work.
 RipoDoc: parked. Site stays up. No code, no strategy. Revisit only on three
 HoundShield customers, or 2026-11-08, or an unprompted MSP request.
 VibeFlow: archive pending. Not yet archived.
+
+## Verified this session
+
+Gmail connector is live and can create drafts. The sent folder holds 201
+threads and is almost entirely automated unsubscribe messages; there is no warm
+business network in this account. The warm list must be built by hand from
+phone contacts and LinkedIn. Recorded in 03-CASH-30-DAYS.md section 0.05.
+
+Upwork payment timing confirmed against Upwork's own support documentation:
+14 day client review window, then a five day security hold after release.
 
 ## Open questions requiring a human
 
@@ -58,6 +74,7 @@ None. This is the first.
 
 ## Next action
 
-Send the warm network message from 03-CASH-30-DAYS.md section 4c to every
-former colleague, manager and acquaintance. It has the highest close rate of
-any channel in the plan and it is the one that feels worst to send.
+Twenty minutes, by hand, today: build the warm list of 40 names from phone
+contacts and LinkedIn, per 03-CASH-30-DAYS.md section 0.05. Nothing downstream
+can be automated until that list exists, and it sits in front of the highest
+converting channel in the plan.

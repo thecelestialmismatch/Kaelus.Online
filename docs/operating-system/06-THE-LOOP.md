@@ -141,6 +141,34 @@ dollars closed, next action.
 
 ---
 
+## 5a. Installed 2026-09-08, and one honest limitation
+
+The scheduled Routine is live. Trigger id trig_01Xe57VusLTUPbVynMeRiktj, cron
+`0 21 * * 0-4`, which is 07:00 on weekday mornings in Australian Eastern Time.
+It fires a fresh session each weekday and sends the five line summary to phone
+and email.
+
+The limitation, stated because a silent failure is worse than a known one: a
+scheduled Routine created this way carries no connectors, so the fired session
+has no Gmail tools. It cannot create drafts and it cannot read the inbox.
+
+That does not stop the cycle. Step four falls back to writing each finished
+message, verbatim and in full, into the Outbox section of LEDGER.md, and the
+row is still logged with status DRAFTED. The message still exists and is still
+addressed to a named person, which is what Law one requires. Only the delivery
+mechanism changed, and you copy the text out instead of opening a drafts
+folder. Step five, reading replies, is skipped on those runs and the summary
+says so in one line.
+
+Sessions started by hand, including this one, do have Gmail and do create real
+drafts. So the practical shape is: the Routine keeps the pipeline full every
+weekday without you, and any manual session converts the backlog into actual
+drafts.
+
+To give the Routine real Gmail access, recreate it from the Routines interface
+on claude.ai rather than from inside a session, which is the surface that can
+attach connectors.
+
 ## 6. Running it automatically
 
 Three ways, in increasing autonomy. All three use the same prompt above.
