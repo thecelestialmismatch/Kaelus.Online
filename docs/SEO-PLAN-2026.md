@@ -120,9 +120,9 @@ Schema: SoftwareApplication + PriceSpecification
 ### Partner Page (`/partners`)
 
 ```
-Title: HoundShield Partner Program — 20% Recurring Commission for C3PAOs
-Meta: Refer defense contractor clients to HoundShield. Earn 20% recurring commission. C3PAOs and MSPs earn $40-$2,000/month per client account.
-H1: Partner With HoundShield — Earn on Every CMMC Referral
+Title: HoundShield Partner Program — $399 Wholesale for RPOs & MSPs
+Meta: Co-brand the $499 CMMC AI Risk Assessment Report. RPOs and MSPs buy at $399 — a flat $100 off — set their own retail, and keep the spread. No commission, no minimums.
+H1: Partner With HoundShield — Co-Brand the AI Risk Report
 Schema: Organization
 ```
 
@@ -346,8 +346,8 @@ AI-usage checklist (Tier 2), then programmatic NIST-control pages (§8).
   bucket the playbook weights at 40%).
 - **Tier-2 article:** /blog/c3pao-ai-usage-checklist-cmmc-assessment — 12
   assessor questions, deep internal links into /controls.
-- **Channel:** /partners/kit — RPO/MSP co-branded report kit ($299 wholesale),
-  with the C3PAO-exclusion note stated on-page.
+- **Channel:** /partners/kit — RPO/MSP co-branded report kit ($399 wholesale,
+  a flat $100 off), with the C3PAO-exclusion note stated on-page.
 - **Infra:** Lighthouse CI (informational) on marketing pages; security-audit
   workflow (report-only; both packages carry known prod advisories) +
   Dependabot for the fixes; scanner latency benchmark in CI proving the <10ms
