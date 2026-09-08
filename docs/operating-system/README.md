@@ -34,7 +34,8 @@ continue.
 5. 05-DELETE-LIST.md. What goes, with the evidence for each.
 6. 06-THE-LOOP.md. The system that runs it, including the autopilot prompt.
 7. 07-WEEKLY-REPORTING.md. The one page the system shows you each Sunday.
-8. STATE.md. The system's memory. One page, always current.
+8. 08-WHAT-TO-WRITE.md. Every message, finished, in plain language.
+9. STATE.md. The system's memory. One page, always current.
 
 Executable: scripts/cleanup-strategy-sprawl.sh, which performs the deletions in
 05-DELETE-LIST.md. It has not been run.

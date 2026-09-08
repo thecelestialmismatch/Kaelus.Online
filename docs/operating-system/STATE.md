@@ -20,7 +20,9 @@ CMMC Task Force report expected public on or about 2026-09-28. Days remaining 20
 Dollars closed, cash lane: 0.
 Dollars invoiced and unpaid: 0.
 Paid HoundShield reports: 0.
-Verified against Stripe on: never. See open question one.
+Verified against Stripe on 2026-09-08 by the founder, by hand, in the Stripe
+dashboard. Zero payments. This number is now MEASURED, not inferred. The
+webhook blind spot no longer qualifies it.
 
 ## Pipeline
 
@@ -48,6 +50,14 @@ RipoDoc: parked. Site stays up. No code, no strategy. Revisit only on three
 HoundShield customers, or 2026-11-08, or an unprompted MSP request.
 VibeFlow: archive pending. Not yet archived.
 
+## Team
+
+Solo. The founder built all three projects alone, with AI tooling, and there is
+no co-founder, contractor or employee. Every message therefore goes out as one
+person, and every offer must be one person's work. This is recorded because it
+sets the ceiling on what can honestly be sold: one engagement at a time,
+finished, before the next is promised.
+
 ## Verified this session
 
 Gmail connector is live and can create drafts. The sent folder holds 201
@@ -60,11 +70,10 @@ Upwork payment timing confirmed against Upwork's own support documentation:
 
 ## Open questions requiring a human
 
-1. STRIPE_WEBHOOK_SECRET has never been set in Vercel. Until it is set, or the
-   reconciler at /api/cron/reconcile-orders has run once over a 90 day window,
-   "zero paying customers" means "zero the system could have noticed." Check
-   Stripe Payments by hand once. This is the only number in this file that has
-   never been verified against its source.
+1. RESOLVED 2026-09-08. Stripe checked by hand. Zero payments. The zero is real.
+   STRIPE_WEBHOOK_SECRET should still be set so a future sale is recorded in
+   real time rather than up to 24 hours late by the reconciler, but it is no
+   longer a measurement problem.
 2. The Stripe checkout link at buy.stripe.com/aFa00lgzIgJx3Aqb7qgUM00 has never
    been completed end to end by a real card. Buy one and refund it.
 
