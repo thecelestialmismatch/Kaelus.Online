@@ -79,7 +79,11 @@ Upwork payment timing confirmed against Upwork's own support documentation:
 
 ## Last cycle
 
-None. This is the first.
+2026-09-08 21:04 UTC. FAILED SILENTLY, reported SUCCEEDED, produced nothing in
+77 seconds. Cause and fix in 06-THE-LOOP.md section 5a: a fresh Routine session
+has no repo checkout and no push credentials, so the loop was rewritten so that
+its printed output is the delivery. Re-fired manually 2026-09-09 01:21 UTC to
+verify the fix.
 
 ## Next action
 

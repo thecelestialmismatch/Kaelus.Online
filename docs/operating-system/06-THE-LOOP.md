@@ -141,33 +141,49 @@ dollars closed, next action.
 
 ---
 
-## 5a. Installed 2026-09-08, and one honest limitation
+## 5a. Installed 2026-09-08. Broke silently. Fixed 2026-09-09.
 
-The scheduled Routine is live. Trigger id trig_01Xe57VusLTUPbVynMeRiktj, cron
-`0 21 * * 0-4`, which is 07:00 on weekday mornings in Australian Eastern Time.
-It fires a fresh session each weekday and sends the five line summary to phone
-and email.
+Recorded in full because the failure mode matters more than the fix.
 
-The limitation, stated because a silent failure is worse than a known one: a
-scheduled Routine created this way carries no connectors, so the fired session
-has no Gmail tools. It cannot create drafts and it cannot read the inbox.
+The Routine fired on schedule at 2026-09-08 21:04 UTC and the scheduler
+reported SUCCEEDED. It had in fact done nothing at all: no contacts, no
+messages, no commit, an empty LEDGER. The run lasted 77 seconds, which is not
+enough time to run a single web search, let alone eight.
 
-That does not stop the cycle. Step four falls back to writing each finished
-message, verbatim and in full, into the Outbox section of LEDGER.md, and the
-row is still logged with status DRAFTED. The message still exists and is still
-addressed to a named person, which is what Law one requires. Only the delivery
-mechanism changed, and you copy the text out instead of opening a drafts
-folder. Step five, reading replies, is skipped on those runs and the summary
-says so in one line.
+SUCCEEDED meant only that the session did not crash. It did not mean the work
+happened. That distinction is Law three applied to the system itself, and the
+system was not applying it to its own output.
 
-Sessions started by hand, including this one, do have Gmail and do create real
-drafts. So the practical shape is: the Routine keeps the pipeline full every
-weekday without you, and any manual session converts the backlog into actual
-drafts.
+Two causes, both structural rather than accidental.
 
-To give the Routine real Gmail access, recreate it from the Routines interface
-on claude.ai rather than from inside a session, which is the surface that can
-attach connectors.
+1. A Routine created with create_new_session_on_fire from inside a session
+   inherits the environment but NOT the repository. Its session_request carried
+   `sources: []`. The fired session had no checkout, so it could not read
+   STATE.md or any other file the prompt told it to read, and it stopped.
+2. Even with a checkout it could not have finished. A fresh session has no push
+   credentials, so step eight, commit and push the LEDGER, was impossible. The
+   Gmail fallback that wrote to LEDGER.md instead of drafts was therefore not a
+   fallback at all: both paths were closed.
+
+The fix changes what the loop is. It no longer reads or writes the repository
+as its primary job, because it can do neither reliably.
+
+The output IS the delivery. The Routine now finds five real people by web
+search, writes the five emails in full, and prints them. That output goes to
+the founder's phone and inbox through the Routine's push and email
+notification. No checkout is needed, no push is needed, and nothing can fail
+silently in between, because an empty notification is visibly empty.
+
+The prompt is now self-sufficient: the message template is embedded in it
+rather than read from a file. It still attempts a read-only clone of the public
+repo for context, but explicitly instructs that a failed clone must not stop
+the cycle.
+
+The lesson, which generalises past this Routine. A scheduled job that reports
+success without producing an artifact you can see is worse than one that fails
+loudly, because it consumes the days you thought were covered. Verify the first
+run of anything scheduled against its output, never against its status. This
+one was caught by noticing a 77 second runtime, not by an error.
 
 ## 6. Running it automatically
 
@@ -180,15 +196,15 @@ Option two, self paced loop. Run the /loop skill with no interval and the
 autopilot prompt. The model paces its own wake ups and continues the cycle
 without being re-prompted.
 
-Option three, scheduled. A Routine that fires the autopilot prompt on a cron
-every weekday morning into a fresh session. Weekdays at 07:00 in Australian
-Eastern Time is 21:00 UTC the previous day, so the expression is
-`0 21 * * 0-4`. If you are in the United States, convert from your own offset
-rather than reusing that expression.
+Option three, scheduled. This is the one that is installed and running.
+Trigger id trig_01Xe57VusLTUPbVynMeRiktj, cron `0 21 * * 0-4`, which is 07:00
+on weekday mornings in Australian Eastern Time. If you are in the United
+States, convert from your own offset rather than reusing that expression.
 
 Option three is the one that survives inconsistency, because it does not
-require you to remember. What arrives is a drafts folder with eight messages in
-it and a five line summary. Your job is the fifteen minutes.
+require you to remember. What arrives on your phone and in your inbox each
+weekday morning is five real people, five finished emails, and five lines of
+numbers. Your job is to read them and press send.
 
 ## 7. The one failure this system is built to prevent
 
